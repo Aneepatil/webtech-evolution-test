@@ -25,7 +25,7 @@ app.use(globleErrorHandler);
 
 // Page Not found Error(404) handler middleware
 app.use("*", (req, res) => {
-  res.status(404).json({
+  throw res.status(404).json({
     message: `${req.originalUrl} -> Route Not Found`,
   });
 });
